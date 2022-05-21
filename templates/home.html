@@ -12,6 +12,9 @@
         <div class="cards">
             {% for place in places %}
                 <div class="room_card">
+                    {% if place.thumbnail %}
+                        {% comment %} <img src={{place.thumbnail}} /> {% endcomment %}
+                    {% endif %}
                     <h2>{{place.name}}</h2>
                     <h4>{{place.description}}</h4>
                     <h4>{{place.address}}</h4>
