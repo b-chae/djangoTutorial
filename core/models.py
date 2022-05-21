@@ -1,4 +1,3 @@
-from ssl import create_default_context
 from django.db import models
 
 
