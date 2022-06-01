@@ -3,13 +3,13 @@ from . import models
 
 
 def all_places(request):
-    # print(dir(request))
-    print(request.GET)
+    page = int(request.GET.get('page', 1))
     places = models.Place.objects.all()
+    start = (page - 1) * 10
     return render(
         request,
         "home.html",
-        context={"places": places, "wow": '12039'})
+        context={"places": places[start:start+10]})
 
 
 def place_detail(request, pk):
