@@ -11,16 +11,16 @@
 
         <div class="cards">
             {% for place in places %}
+            <a href={% url "places:detail" place.pk %}>
                 <div class="room_card">
                     {% if place.thumbnail %}
                         <img src={{place.thumbnail}} class="img_fit" />
                     {% endif %}
-                    <a href={% url "places:detail" place.pk %}>
-                        <h2>{{place.name}}</h2>
-                    </a>
+                    <h2>{{place.name}}</h2>
                     <h4>{{place.description}}</h4>
                     <h4>{{place.address}}</h4>
                 </div>
+            </a>
             {% endfor %}
         </div>
         {% include 'partial/footer.html' %}
